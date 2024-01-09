@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<h1>To do list</h1>
+    <div>
+        <form method="POST">
+            {%csrf_token%}
+            <input name="delete_items" type='text' list="items">
+            <datalist id="items" >
+                {%for i in item%}
+                    <option value='{{i}}'>
+                {%endfor%}
+            </datalist>
+            
+            </input>
+        </form>
+    </div>
+    <a href= "{% url 'index' %}">Back</a>
+  </body>
+</html>

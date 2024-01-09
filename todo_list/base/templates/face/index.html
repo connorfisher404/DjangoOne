@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<h1>To do list</h1>
+    <div>
+        <ol>
+              {%for i in item_in_list%}
+                <li>{{i}}</li>
+              {%endfor%}
+        </ol>
+    <a href= "{% url 'create' %}">Create</a>
+    <a href= "{% url 'delete' %}">Delete</a>
+  </body>
+</html>
